@@ -23,7 +23,6 @@ const getSum = (chars) => {
 };
 
 const run = async () => {
-  await wait(4000);
   const fetched = await fetch("./data.txt");
   const data = await (await fetched.text()).split("\r\n");
 
