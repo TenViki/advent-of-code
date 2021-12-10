@@ -1,0 +1,20 @@
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: "consolas";
+}
+
+.character,
+.s {
+  color: grey;
+}
+
+.wrong {
+  color: #e74c3c;
+}
+
+.score {
+  color: #27ae60;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
