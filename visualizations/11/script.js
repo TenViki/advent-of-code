@@ -126,7 +126,7 @@ const main = async (data) => {
     await checkForFlashes(data);
     increaseGrid(data);
     i++;
-    if (allZeroes(data)) break;
+    // if (allZeroes(data)) break;
     updateGrid(data);
     await wait(100);
 
