@@ -59,7 +59,7 @@ const checkForFlashes = async (data) => {
           data[i][j] = -1;
 
           document.getElementById(`${i}-${j}`).style.color = "#f1c40f";
-          await wait(10);
+          await wait(100);
 
           flashes++;
           document.getElementById("flashes").textContent = flashes;
@@ -72,7 +72,11 @@ const checkForFlashes = async (data) => {
             if (data[x][y] === 9) continue;
             if (data[x][y] === -1) continue;
 
+            document.getElementById(`${x}-${y}`).style.color = "#d35400";
             data[x][y]++;
+            if (data[x][y] === 9) {
+              document.getElementById(`${x}-${y}`).style.color = "#f1c40f";
+            }
           }
         }
       }

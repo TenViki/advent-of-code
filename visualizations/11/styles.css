@@ -11,7 +11,7 @@ body {
   width: 1.2rem;
   height: 1rem;
   color: grey;
-  transition: opacity 0.2s;
+  transition: 0.2s;
 }
 
 .flex {
