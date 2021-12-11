@@ -1,0 +1,33 @@
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: "consolas";
+}
+
+.character {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1rem;
+  color: grey;
+  transition: opacity 0.2s;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.n {
+  color: #3498db;
+}
+
+#run {
+  color: #3498db;
+  cursor: pointer;
+}
+
+#run:hover {
+  color: #2980b9;
+}
