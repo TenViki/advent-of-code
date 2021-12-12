@@ -1,0 +1,62 @@
+.node {
+  position: absolute;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: "Consolas";
+  overflow: hidden;
+}
+
+.link {
+  /* background-color: #ff000011; */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  height: 2px;
+  position: absolute;
+  background-color: #3498db33;
+  /* transition: 0.2s; */
+}
+
+.node {
+  padding: 0.25rem;
+}
+
+#current {
+  position: relative;
+  width: 66%;
+  height: 90vh;
+}
+
+.number,
+.start,
+.end {
+  color: #3498db;
+}
+
+.active {
+  background-color: #3498db;
+}
+
+.current {
+  background-color: #16a085;
+}
+
+.success {
+  background-color: #2ecc71;
+}
+
+.flex {
+  display: flex;
+}
+
+#start {
+  color: #3498db;
+  cursor: pointer;
+}

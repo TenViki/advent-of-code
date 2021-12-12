@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <div id="current"></div>
+      <div class="info">
+        <div id="start" onclick="main()">[start]</div>
+        <div>Current path: <span id="c-path" class="number">0</span></div>
+        <div>Possible paths: <span id="c-paths" class="number">0</span></div>
+        <div id="possible"></div>
+      </div>
+    </div>
+  </body>
+</html>
