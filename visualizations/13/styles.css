@@ -1,0 +1,57 @@
+.node {
+  position: absolute;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: "Consolas";
+  overflow: hidden;
+}
+
+.point {
+  display: inline-block;
+  transition: 0.5s transform, 0.5s font-size;
+}
+
+#start {
+  color: #3498db;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.character {
+  color: grey;
+  transition: 0.5s transform, 0.5s font-size;
+}
+
+.active {
+  color: #d35400;
+}
+
+.active-row .character {
+  color: #c0392b;
+}
+
+.copy-row .character {
+  color: #f1c40f;
+}
+
+.copy-col.character,
+.copy-col.point {
+  color: #e74c3c;
+}
+
+.active-col.character,
+.active-col.point {
+  color: #c0392b;
+}
+
+.done .point,
+.done .character {
+  font-size: 2rem;
+}

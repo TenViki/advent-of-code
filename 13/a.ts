@@ -43,9 +43,6 @@ const countPoints = () => {
 };
 
 if (line.includes("x")) {
-  // for (let i = +value; i <= grid.length; i++) {
-  //   console.log(grid[i].join(""));
-  // }
   for (let i in grid) {
     for (let j = +value + 1; j < grid[i].length; j++) {
       if (grid[i][j] === "#") {

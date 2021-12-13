@@ -28,18 +28,6 @@ const removeCols = (from: number, to: number) => {
   grid.forEach((row) => row.splice(from, to + 1));
 };
 
-const countPoints = () => {
-  let count = 0;
-  for (const row of grid) {
-    for (const point of row) {
-      if (point === "#") {
-        count++;
-      }
-    }
-  }
-  return count;
-};
-
 for (const fold of folds.split("\r\n")) {
   const [line, value] = fold.split("=");
 
