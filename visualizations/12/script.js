@@ -182,16 +182,16 @@ const main = async () => {
             `<div class="number">${p1.join("-")}</div>`
           );
         markPaths(p1);
-        await wait(200);
+        await wait(10);
         markSuccess(p1);
-        await wait(500);
+        await wait(10);
       } else {
         paths.push(p1);
         document.getElementById("c-path").textContent = p1.join("-");
         markPaths(p1);
       }
 
-      await wait(300);
+      await wait(10);
       clearCurrent();
     }
 
