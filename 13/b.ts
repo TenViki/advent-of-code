@@ -55,7 +55,7 @@ for (const fold of folds.split("\r\n")) {
 }
 
 const printReadable = () => {
-  console.log(grid.map((row) => row.join("").replaceAll(".", " ").replaceAll("#", "█")).join("\r\n"));
+  console.log(grid.map((row) => row.join("").replaceAll(".", "  ").replaceAll("#", "██")).join("\r\n"));
 };
 
 printReadable();
