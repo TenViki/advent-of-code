@@ -11,9 +11,7 @@ const yArray = data.split("\r\n").map((x) => +x.split(",")[1]);
 const xMax = Math.max(...xArray);
 const yMax = Math.max(...yArray);
 
-const grid = new Array(yMax + 1)
-  .fill(".")
-  .map(() => new Array(xMax + 1).fill("."));
+const grid = new Array(yMax + 1).fill(".").map(() => new Array(xMax + 1).fill("."));
 
 for (const cord of cords) {
   const [x, y] = cord;
@@ -56,4 +54,8 @@ for (const fold of folds.split("\r\n")) {
   }
 }
 
-console.log(grid.map((row) => row.join("")).join("\r\n"));
+const printReadable = () => {
+  console.log(grid.map((row) => row.join("").replaceAll(".", " ").replaceAll("#", "█")).join("\r\n"));
+};
+
+printReadable();
