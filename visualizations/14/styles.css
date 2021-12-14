@@ -1,0 +1,46 @@
+.node {
+  position: absolute;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: "Consolas";
+  overflow: hidden;
+}
+
+.point {
+  display: inline-block;
+  transition: 0.5s transform, 0.5s font-size;
+}
+
+#start {
+  color: #3498db;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.chart {
+  width: 60rem;
+}
+
+.letter {
+  font-size: 2rem;
+}
+
+.number {
+  color: #3498db;
+}
+
+.steps {
+  color: #d35400;
+  font-size: 2rem;
+}
+
+.dynout {
+  color: #f1c40f;
+}

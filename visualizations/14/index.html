@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <div class="chart">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="data">
+        <div class="steps">Steps: <span id="steps" class="dynout">0</span></div>
+        <div class="steps">Template: <span id="template" class="dynout"></span></div>
+        <div class="steps">Part1: <span id="part1" class="dynout">calculating</span></div>
+        <div class="steps">Part2: <span id="part2" class="dynout">calculating</span></div>
+        <div id="letters"></div>
+      </div>
+      <div id="start" onclick="main()">[start]</div>
+    </div>
+  </body>
+</html>

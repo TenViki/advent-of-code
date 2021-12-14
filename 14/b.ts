@@ -73,7 +73,6 @@ let min = Infinity;
 
 console.log(letters);
 
-// const letters = countLetters(string);
 for (const key of Object.keys(letters)) {
   if (letters[key] > max) {
     max = letters[key];
