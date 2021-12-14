@@ -30,7 +30,8 @@ const run = async () => {
 
   for (let i = 0; i < template.length - 1; i++) {
     const momentaryString = template.substring(i, i + 2);
-    pairs[momentaryString] = 1;
+    if (pairs[momentaryString]) pairs[momentaryString]++;
+    else pairs[momentaryString] = 1;
   }
   console.log(pairs);
 
