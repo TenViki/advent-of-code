@@ -1,6 +1,6 @@
 import random
 
-grid_height = 30
+grid_height = 45
 grid_width = 45
 
 for i in range(grid_height):

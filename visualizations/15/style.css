@@ -1,0 +1,28 @@
+body {
+  font-family: "consolas";
+  color: #fff;
+  background-color: #121212;
+}
+
+.weight {
+  display: inline-block;
+  width: 2rem;
+  color: #3498db;
+}
+
+.visiting {
+  color: #e74c3c;
+}
+
+.visiting-h {
+  color: #f1c40f;
+}
+
+.done .character:not(.path) {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.path {
+  color: #f1c40f;
+}
