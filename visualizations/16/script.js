@@ -144,6 +144,7 @@ const createRowAt = (level) => {
       if (above === "┘") toInsert = "│";
       if (above === "└") toInsert = "│";
       if (above === "│") toInsert = "│";
+      if (above === "┤") toInsert = "│";
       html += `<span id="${level}-${index}">${toInsert}</span>`;
     });
     html += "</div>";
