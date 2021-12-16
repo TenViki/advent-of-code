@@ -1,5 +1,5 @@
 body {
-  font-family: "consolas";
+  font-family: "consolas", monospace;
   color: #fff;
   background-color: #121212;
 }

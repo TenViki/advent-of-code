@@ -139,7 +139,7 @@ const createRowAt = (level) => {
     if (document.getElementById(`l-${i}`)) continue;
     let html = `<div id="l-${i}">`;
     bin.split("").forEach((bit, index) => {
-      let toInsert = " ";
+      let toInsert = " ";
       const above = document.getElementById(`${i - 1}-${index}`)?.textContent;
       if (above === "┘") toInsert = "│";
       if (above === "└") toInsert = "│";

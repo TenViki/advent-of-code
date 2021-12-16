@@ -1,5 +1,10 @@
+@font-face {
+  font-family: consolas;
+  src: url("../font/Consolas.ttf");
+}
+
 body {
-  font-family: "consolas";
+  font-family: consolas, "consolas", "Roboto Mono", monospace;
   color: #fff;
   background-color: #121212;
   white-space: nowrap;
