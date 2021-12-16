@@ -29,13 +29,18 @@ let bin = "";
 
 const load = async () => {
   const res = await fetch("data.txt");
-  const data = await res.text();
+  const data = document.getElementById("hex").value;
+
+  if (!data) return alert("Please enter a hex string");
 
   bin = hexToBin(data);
+  if (bin.includes("undefined")) return alert("Please enter a valid hex string");
   document.getElementById("transmitted-data").innerHTML = bin
     .split("")
     .map((bit, i) => `<span id="bit-${i}">${bit}</span>`)
     .join("");
+
+  return 1;
 };
 
 const parseLiteralPacket = (packet, start) => {
@@ -224,9 +229,11 @@ const parsePacket = async (packet, start, level) => {
 };
 
 const main = async () => {
-  await load();
+  if (!(await load())) return;
 
-  console.log(parsePacket(bin, 0, 0));
+  try {
+    await parsePacket(bin, 0, 0);
+  } catch {
+    alert("Invalid packet. You probably entered invalid input.");
+  }
 };
-
-main();
