@@ -30,6 +30,7 @@ let bin = "";
 const load = async () => {
   const res = await fetch("data.txt");
   const data = document.getElementById("hex").value;
+  document.getElementById("markers").innerHTML = "";
 
   if (!data) return alert("Please enter a hex string");
 
