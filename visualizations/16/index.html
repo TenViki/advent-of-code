@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advent of code 2021 | Day 16</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="transmitted-data"></div>
+    <div id="markers"></div>
+    <br />
+    <div class="flex">
+      <div id="legend">
+        <div class="version">██ Version</div>
+        <div class="type">██ Type</div>
+        <div>██ Literal value</div>
+        <div class="endbit">██ Ending mark bit</div>
+        <div class="lengthtype">██ Type of length of operator</div>
+        <div class="lengthfactor">██ Length of operator</div>
+      </div>
+      <div>
+        <div><span class="lengthfactor">+  </span> Addition</div>
+        <div><span class="lengthfactor">*  </span> Multiplication</div>
+        <div><span class="lengthfactor">min</span> Minimum</div>
+        <div><span class="lengthfactor">max</span> Maximum</div>
+        <div><span class="lengthfactor">ltr</span> Literal value</div>
+        <div><span class="lengthfactor">>  </span> Is less than</div>
+        <div><span class="lengthfactor"><  </span> Is greater than</div>
+        <div><span class="lengthfactor">== </span> Are equal</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -41,8 +41,8 @@ const hexToBin = (hex: string) => {
 
 const bin = hexToBin(data);
 
-const parseLiteralPocket = (pocket: string, level: number) => {
-  const data = pocket.slice(6);
+const parseLiteralPacket = (packet: string, level: number) => {
+  const data = packet.slice(6);
   let end = false;
   let current = 0;
   let value = "";
@@ -64,34 +64,34 @@ const parseLiteralPocket = (pocket: string, level: number) => {
 
 let sum = 0;
 
-const parsePocket = (pocket: string, level: number) => {
-  const version = pocket.slice(0, 3);
-  const type = pocket.slice(3, 6);
+const parsePacket = (packet: string, level: number) => {
+  const version = packet.slice(0, 3);
+  const type = packet.slice(3, 6);
 
   sum += parseInt(version, 2);
 
   if (parseInt(type, 2) === 4) {
-    const length = parseLiteralPocket(pocket, level);
+    const length = parseLiteralPacket(packet, level);
     return length + 6;
   } else {
-    const lengthType = pocket.slice(6, 7);
+    const lengthType = packet.slice(6, 7);
 
-    // Number represents number of sub-pockets in this operator pocket
+    // Number represents number of sub-packets in this operator packet
     if (lengthType === "1") {
-      let lengthFactor = parseInt(pocket.slice(7, 7 + 11), 2);
+      let lengthFactor = parseInt(packet.slice(7, 7 + 11), 2);
       let length = 0;
       for (let i = 0; i < lengthFactor; i++) {
-        length += parsePocket(pocket.slice(7 + 11 + length), level + 1)!;
+        length += parsePacket(packet.slice(7 + 11 + length), level + 1)!;
       }
       return 7 + 11 + length;
     }
 
-    // Number represents length of data in which subpockets are
+    // Number represents length of data in which subpackets are
     if (lengthType === "0") {
-      let lengthFactor = parseInt(pocket.slice(7, 7 + 15), 2);
+      let lengthFactor = parseInt(packet.slice(7, 7 + 15), 2);
       let lengthCounter = 0;
       while (lengthCounter < lengthFactor) {
-        const packetLength = parsePocket(pocket.slice(7 + 15 + lengthCounter), level + 1)!;
+        const packetLength = parsePacket(packet.slice(7 + 15 + lengthCounter), level + 1)!;
         lengthCounter += packetLength;
       }
 
@@ -102,5 +102,5 @@ const parsePocket = (pocket: string, level: number) => {
 
 console.log(bin);
 
-parsePocket(bin, 0);
+parsePacket(bin, 0);
 console.log(sum);

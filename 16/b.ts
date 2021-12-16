@@ -41,8 +41,8 @@ const hexToBin = (hex: string) => {
 
 const bin = hexToBin(data);
 
-const parseLiteralPocket = (pocket: string): [number, number] => {
-  const data = pocket.slice(6);
+const parseLiteralPacket = (packet: string): [number, number] => {
+  const data = packet.slice(6);
   let end = false;
   let current = 0;
   let value = "";
@@ -54,33 +54,33 @@ const parseLiteralPocket = (pocket: string): [number, number] => {
     if (group[0] === "0") end = true;
   }
 
-  console.log("Found literal pocket:", parseInt(value, 2));
+  console.log("Found literal packet:", parseInt(value, 2));
 
   return [current, parseInt(value, 2)];
 };
 
 let sum = 0;
 
-const parsePocket = (pocket: string): [number, number] => {
-  const version = pocket.slice(0, 3);
-  const type = pocket.slice(3, 6);
+const parsePacket = (packet: string): [number, number] => {
+  const version = packet.slice(0, 3);
+  const type = packet.slice(3, 6);
 
   sum += parseInt(version, 2);
 
   if (parseInt(type, 2) === 4) {
-    const [length, number] = parseLiteralPocket(pocket);
+    const [length, number] = parseLiteralPacket(packet);
     return [length + 6, number];
   } else {
-    const lengthType = pocket.slice(6, 7);
+    const lengthType = packet.slice(6, 7);
     const numbers = [];
     let length = 0;
 
-    // Number represents number of sub-pockets in this operator pocket
+    // Number represents number of sub-packets in this operator packet
     if (lengthType === "1") {
-      let lengthFactor = parseInt(pocket.slice(7, 7 + 11), 2);
+      let lengthFactor = parseInt(packet.slice(7, 7 + 11), 2);
       let len = 0;
       for (let i = 0; i < lengthFactor; i++) {
-        const [l, value] = parsePocket(pocket.slice(7 + 11 + len))!;
+        const [l, value] = parsePacket(packet.slice(7 + 11 + len))!;
         len += l;
         numbers.push(value);
       }
@@ -88,12 +88,12 @@ const parsePocket = (pocket: string): [number, number] => {
       length = 7 + 11 + len;
     }
 
-    // Number represents length of data in which subpockets are
+    // Number represents length of data in which subpackets are
     if (lengthType === "0") {
-      let lengthFactor = parseInt(pocket.slice(7, 7 + 15), 2);
+      let lengthFactor = parseInt(packet.slice(7, 7 + 15), 2);
       let lengthCounter = 0;
       while (lengthCounter < lengthFactor) {
-        const [packetLength, value] = parsePocket(pocket.slice(7 + 15 + lengthCounter))!;
+        const [packetLength, value] = parsePacket(packet.slice(7 + 15 + lengthCounter))!;
         lengthCounter += packetLength;
         numbers.push(value);
       }
@@ -137,5 +137,5 @@ const parsePocket = (pocket: string): [number, number] => {
   }
 };
 
-const d = parsePocket(bin);
+const d = parsePacket(bin);
 console.log(d);

@@ -1,0 +1,44 @@
+body {
+  font-family: "consolas";
+  color: #fff;
+  background-color: #121212;
+  white-space: nowrap;
+}
+
+#transmitted-data,
+#markers {
+  color: grey;
+}
+
+.label {
+  color: #fff;
+}
+
+.version {
+  color: #d35400;
+}
+
+.type {
+  color: #f1c40f;
+}
+
+.lengthfactor {
+  color: #3498db;
+}
+
+.lengthtype {
+  color: #9b59b6;
+}
+
+.value {
+  color: #fff;
+}
+
+.endbit {
+  color: #2ecc71;
+}
+
+.flex {
+  display: flex;
+  gap: 2rem;
+}
