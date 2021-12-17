@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <title>Advent of code 2021 | Day 17</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="input">
+      <input type="text" placeholder="target area: x=20..30, y=-10..-5 (or enter your own)" id="input" value="" size="60" />
+      <div class="ckeckbox">
+        <input type="checkbox" name="" id="showpositive" />
+        <label for="showpositive">All the way to max Y</label>
+      </div>
+
+      <span id="run" onclick="load()">[visualize]</span>
+    </div>
+    <div class="flex">
+      <div id="grid"></div>
+      <div class="data">
+        <div class="title">Current velocity:</div>
+        <div>Velocity: <span class="n" id="pos"></span></div>
+        <div>Hits: <span class="n" id="hits"></span></div>
+        <div>Trajectory length: <span class="n" id="len"></span></div>
+        <div>Max y: <span class="n" id="max"></span></div>
+      </div>
+    </div>
+  </body>
+</html>
