@@ -28,7 +28,7 @@ const clearGrid = () => {
 
   for (let i = showpositive ? maxY : 20; i >= minY; i--) {
     html += `<div class="row"><span class="row-label">${i}</span>`;
-    for (let j = 0; j < Math.max(targetStart[0], targetEnd[0]); j++) {
+    for (let j = 0; j <= Math.max(targetStart[0], targetEnd[0]); j++) {
       let className = "nothing";
       let insert = ".";
 
