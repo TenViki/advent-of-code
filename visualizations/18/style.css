@@ -1,0 +1,91 @@
+@font-face {
+  font-family: consolas;
+  src: url("../font/Consolas.ttf");
+}
+
+* {
+  font-family: consolas, "consolas", "Roboto Mono", monospace;
+}
+
+body {
+  color: #fff;
+  background-color: #121212;
+  white-space: nowrap;
+}
+
+.input {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#container {
+  display: none;
+}
+
+#container.shown {
+  display: block;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+}
+
+textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s background-color, 0.2s border;
+  border: 0;
+  padding: 0.3rem;
+  outline: 0;
+  border: transparent solid 1px;
+  min-width: 20rem;
+  color: #fff;
+}
+
+textarea:focus {
+  border: rgba(255, 255, 255, 0.2) solid 1px;
+}
+
+.button {
+  cursor: pointer;
+  transition: 0.2s;
+  color: #3498db;
+  user-select: none;
+}
+
+.button:hover {
+  color: #3498db;
+  opacity: 0.8;
+}
+
+.addition-stack-item {
+  color: grey;
+}
+
+.bracket {
+  color: grey;
+}
+
+.note {
+  color: grey;
+}
+
+.main {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.explode {
+  color: #e74c3c;
+}
+
+.big {
+  color: #f1c40f;
+}
+
+.string {
+  flex-grow: 1;
+}
