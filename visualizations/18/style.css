@@ -60,6 +60,11 @@ textarea:focus {
   opacity: 0.8;
 }
 
+.button:active {
+  color: #3498db;
+  opacity: 0.5;
+}
+
 .addition-stack-item {
   color: grey;
 }
