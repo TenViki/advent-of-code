@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+    <title>Advent of code 2021 | Day 20</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="input">
+      <textarea
+        placeholder="..#.#..#####.#.#.#.###.##.....###.##.#..###.####..#####..#....#..#..##..##(...)
+
+#..#.
+#....
+##..#
+..#..
+..###"
+        id="input"
+        value=""
+      ></textarea>
+
+      <button id="run" class="button" onclick="load()">[process]</button>
+    </div>
+
+    <div id="container">
+      <div class="main">
+        <button class="button" onclick="main()" id="enhance">[Enhance]</button>
+        <div class="data">
+          <div class="dn">Binary: <span id="bin" class="n">0</span></div>
+          <div class="dn">Surroundings: <span id="srs">...</span></div>
+          <div class="dn">Pixels active: <span id="count" class="n">0</span></div>
+          <div class="dn">Enhanced: <span id="enhanced" class="n">0</span></div>
+        </div>
+      </div>
+      <div class="grids">
+        <div id="grid1"></div>
+        <div>-></div>
+        <div id="grid2"></div>
+      </div>
+    </div>
+  </body>
+</html>

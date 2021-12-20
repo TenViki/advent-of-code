@@ -1,0 +1,97 @@
+@font-face {
+  font-family: consolas;
+  src: url("../font/Consolas.ttf");
+}
+
+* {
+  font-family: consolas, "consolas", "Roboto Mono", monospace;
+}
+
+.grids {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+body {
+  color: #fff;
+  background-color: #121212;
+  white-space: nowrap;
+}
+
+.input {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+}
+
+textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s background-color, 0.2s border;
+  border: 0;
+  padding: 0.3rem;
+  outline: 0;
+  border: transparent solid 1px;
+  min-width: 40rem;
+  min-height: 8rem;
+  color: #fff;
+}
+
+textarea:focus {
+  border: rgba(255, 255, 255, 0.2) solid 1px;
+}
+
+.button {
+  font-size: 1rem;
+  background: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #3498db;
+  user-select: none;
+}
+
+.button:hover {
+  color: #3498db;
+  opacity: 0.8;
+}
+
+.button:active {
+  color: #3498db;
+  opacity: 0.5;
+}
+
+.button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.grey {
+  color: grey;
+}
+
+.active {
+  color: #c0392b;
+}
+
+.main {
+  display: flex;
+  gap: 1rem;
+}
+
+.n {
+  color: #3498db;
+}
+
+.dn {
+  display: flex;
+  gap: 0.5rem;
+}

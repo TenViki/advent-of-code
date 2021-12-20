@@ -50,7 +50,6 @@ for (let i = 0; i < 2; i++) {
       if (y >= grid.length - 1 || x >= grid[0].length - 1) string += environment;
       else string += grid[y + 1][x + 1];
 
-      // console.log(string.replaceAll(".", "0").replaceAll("#", "1"));
       newGrid[y].push(algorithm[parseInt(string.replaceAll(".", "0").replaceAll("#", "1"), 2)]);
     });
   });
