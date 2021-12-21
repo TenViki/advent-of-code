@@ -1,6 +1,6 @@
 import { InputParser } from "../files";
 
-const input = new InputParser("test.txt");
+const input = new InputParser("in.txt");
 const data = input
   .getFullInput()
   .replaceAll("\r", "")
@@ -33,7 +33,8 @@ for (let i = 0; i < 10; i++) {
     const [positionA, pointsA, positionB, pointsB] = key.split("-").map(Number);
 
     if (pointsA === 21 || pointsB === 21) {
-      newStates[key] = state;
+      if (newStates[key]) newStates[key] += state;
+      else newStates[key] = state;
       continue;
     }
 
@@ -90,7 +91,6 @@ for (let i = 0; i < 10; i++) {
 
 let playerA = 0;
 let playerB = 0;
-let notFinished = 0;
 
 for (const key in states) {
   const value = states[key];
@@ -98,8 +98,6 @@ for (const key in states) {
 
   if (pointsA === 21) playerA += value;
   else if (pointsB === 21) playerB += value;
-  else notFinished++;
 }
 
-console.log(playerA, playerB, notFinished);
-console.log(Object.keys(states).length);
+console.log(playerA, playerB);
