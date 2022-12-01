@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "tsc --init",
-    "run": "(cd $INIT_CWD) -and (ts-node"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
