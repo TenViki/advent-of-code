@@ -1,0 +1,46 @@
+#grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stack-number {
+  color: #777;
+}
+
+.stack-item{
+  position: absolute;
+  transition: .5s;
+}
+
+.slot {
+  animation: .2s grow forwards;
+}
+
+.move {
+  color: #777;
+  transition: .5s;
+}
+
+.active {
+  color: #fff;
+}
+
+.end {
+  color: #777;
+}
+
+.end .result {
+  color: #3498db;
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 1.5rem;
+  }
+}
