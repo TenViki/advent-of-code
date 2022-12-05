@@ -1,0 +1,53 @@
+/* init font */
+
+@font-face {
+  font-family: "Caskaydia";
+  src: url('./fonts/caskaydia.otf');
+}
+
+* {
+  font-family: "Caskaydia", monospace;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.start-text{
+  margin-bottom: 1rem;
+}
+
+.day {
+  display: block;
+  width: fit-content;
+  color: #777;
+  cursor: pointer;
+  transition: .2s;
+  text-decoration: none;
+  outline: 0;
+}
+
+.day::before{
+  content: "> ";
+  color: #fff;
+  opacity: 0;
+  transition: .2s;
+}
+
+.day:focus::before,
+.day:hover::before {
+  opacity: 1;
+}
+
+.day:active {
+  color: #fff;
+}
+
+body {
+  background-color: #121212;
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+}
