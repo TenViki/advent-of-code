@@ -24,7 +24,7 @@ h1 {
   width: fit-content;
   color: #777;
   cursor: pointer;
-  transition: .2s;
+  transition: .3s;
   text-decoration: none;
   outline: 0;
 }
@@ -85,6 +85,7 @@ body, html {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .main {
@@ -110,4 +111,8 @@ input[type="checkbox"] {
   justify-content: center;
   flex-grow: 1;
   flex-direction: column;
+}
+
+.output.left {
+  align-items: flex-start;
 }

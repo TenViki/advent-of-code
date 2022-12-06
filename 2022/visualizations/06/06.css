@@ -1,0 +1,40 @@
+.characters {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#row {
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+  transition: .1s;
+  width: .8rem;
+}
+
+.char.active{
+  color: #3498db;
+}
+
+.char.removing {
+  color: transparent;
+  width: 0;
+  transform: translateX(-100%);
+}
+
+#counter {
+  color: #777;
+  margin-right: 1rem;
+}
+
+#part1-win,
+#part2-win {
+  color: #777;
+  margin-right: 1rem;
+}
+
+#part1-score,
+#part2-score {
+  color: #f1c40f;
+}
