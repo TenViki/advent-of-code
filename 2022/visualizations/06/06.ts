@@ -58,7 +58,7 @@ const run = async () => {
 
     charElement!.classList.add("active");
 
-    await wait(500);
+    await wait(150);
     counter!.textContent = char;
     actBefore?.remove();
 

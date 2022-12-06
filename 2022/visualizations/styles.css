@@ -24,7 +24,7 @@ h1 {
   width: fit-content;
   color: #777;
   cursor: pointer;
-  transition: .3s;
+  transition: .1s;
   text-decoration: none;
   outline: 0;
 }
