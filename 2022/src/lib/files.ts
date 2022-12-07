@@ -23,12 +23,14 @@ export class InputParser {
     }
   }
 
-  public next(): string | null {
+  public next(moveSelector = true): string | null {
     if (this.linesRead >= this.lines.length) {
       return null;
     }
     const line = this.lines[this.linesRead];
-    this.linesRead++;
+
+    if (moveSelector) this.linesRead++;
+
     return line.replace("\r", "");
   }
 
