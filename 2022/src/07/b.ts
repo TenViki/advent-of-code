@@ -46,7 +46,6 @@ while (inputParser.hasNext()) {
     continue;
   }
 
-  const nextLine = inputParser.next(false);
   while (inputParser.next(false) && !inputParser.next(false)?.startsWith("$")) {
     const [sizeOrDir, name] = inputParser.next()!.split(" ");
 

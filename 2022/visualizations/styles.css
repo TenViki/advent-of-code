@@ -116,3 +116,7 @@ input[type="checkbox"] {
 .output.left {
   align-items: flex-start;
 }
+
+.output.top {
+  justify-content: flex-start;
+}

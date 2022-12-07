@@ -1,0 +1,89 @@
+.output {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.file-controls{
+  display: flex;
+  height: 2rem;
+  margin-left: 1rem;
+}
+
+#path {
+  color: #777;
+  min-width: 15rem;
+  margin-left: 1rem;
+  padding: .5rem 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.file-row.folder {
+  cursor: pointer;
+  transition: .2s;
+}
+
+.file-row.folder:hover {
+  background-color: #333;
+}
+
+.file-row.folder:active {
+  background-color: #555;
+}
+
+.file-row.selected {
+  background-color: #555;
+}
+
+td {
+  padding: .5rem 0;
+  padding-right: 2rem;
+}
+
+.type {
+  color: #777;
+}
+
+.size {
+  color: #f1c40f;
+  text-align: right;
+}
+
+td:nth-child(2) {
+  min-width: 10rem;
+}
+
+td:first-child {
+  padding-left: 1rem;
+}
+
+td:last-child {
+  padding-right: 1rem;
+}
+
+#progress {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  color: #777;
+}
+
+#progress-bar {
+  background-color: #555;
+  height: 2px;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+#progress-bar-inner {
+  background-color: #f1c40f;
+  height: 2px;
+  width: 0;
+  transition: .2s;
+}
+
+#progress span {
+  color: #f1c40f;
+}
