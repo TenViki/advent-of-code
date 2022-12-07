@@ -154,6 +154,8 @@ const calculateFolderSize = (folder: Folder): number => {
 };
 
 const run = async () => {
+  root.children = {};
+  root.size = 0;
   const workingValue = textarea!.value || defaultValue;
   const input = workingValue.split("\n").map((s) => s.trim());
 
@@ -206,14 +208,19 @@ const run = async () => {
 
   changeDir(root);
 
+  document.getElementById("progress-bar-inner").style.width = `${
+    (root.size / filesystemSize) * 0
+  }%`;
+
   document.getElementById("progress-text").innerHTML = `Used <span>${formatSize(
     root.size
   )}</span> of available <span>${formatSize(filesystemSize)}</span>`;
+
+  document.getElementById("progress").style.display = "block";
+  await wait(100);
   document.getElementById("progress-bar-inner").style.width = `${
     (root.size / filesystemSize) * 100
   }%`;
-
-  document.getElementById("progress").style.display = "block";
 
   console.log(root);
 };
