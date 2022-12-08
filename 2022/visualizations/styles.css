@@ -4,12 +4,6 @@
   font-family: "Caskaydia";
   src: url('./fonts/caskaydia.otf');
 }
-
-.select {
-  padding: 1rem;
-  font-size: 150%;
-}
-
 * {
   font-family: "Caskaydia", monospace;
   margin: 0;
@@ -17,10 +11,6 @@
 
 h1 {
   font-weight: 100;
-  margin-bottom: 1rem;
-}
-
-.start-text{
   margin-bottom: 1rem;
 }
 
@@ -47,6 +37,19 @@ h1 {
 }
 
 .day:active {
+  color: #fff;
+}
+
+.day:disabled {
+  color: #777;
+  cursor: default;
+}
+
+.day:disabled::before {
+  opacity: 0;
+}
+
+.day.selected {
   color: #fff;
 }
 

@@ -1,0 +1,65 @@
+.command-line {
+  color: #777;
+}
+
+.command-line span {
+  color: #f1c40f;
+}
+
+.command-line .dollar-sign{
+  color: #fff;
+}
+
+.terminal {
+  background-color: #121212;
+  border-radius: .5rem;
+  min-width: 30rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top right, #c0392b, #d35400);
+}
+
+.terminal-content {
+  padding : 1rem;
+  padding-top: 0;
+}
+
+.terminal-heading {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.terminal-heading-name{
+  flex-grow: 1;
+}
+
+.terminal-heading-button{
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  margin-left: .5rem;
+}
+
+.terminal-heading-button.g {
+  background-color: #2ecc71;
+}
+
+.terminal-heading-button.y {
+  background-color: #f1c40f;
+}
+
+.terminal-heading-button.r {
+  background-color: #e74c3c;
+}
+
+#t-name {
+  color: #f1c40f;
+}
+#loading {
+  margin-top: 1rem;
+}

@@ -5,15 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./main.css" />
     <title>Advent Of Code 2022</title>
   </head>
   <body class="select">
-    <h1>ADVENT OF CODE 2022</h1>
-    <div class="start-text">Start by selecting day [tab]</div>
-    <div class="grid-select">
-      <a class="day" tabindex="0" href="05/">05</a>
-      <a class="day" tabindex="0" href="06/">06</a>
-      <a class="day" tabindex="0" href="07/">07</a>
+    <div class="terminal-background">
+      <div class="terminal">
+        <div class="terminal-heading">
+          <div class="terminal-heading-name">Advent Of Code 2022</div>
+          <div class="terminal-heading-button g"></div>
+          <div class="terminal-heading-button y"></div>
+          <div class="terminal-heading-button r"></div>
+        </div>
+        <div class="terminal-content">
+          <div class="command-line">
+            <span class="dollar-sign">tenviki@web:</span>~<span
+              class="dollar-sign"
+              >$</span
+            >
+            <span>cd ~/projects/2022</span>
+          </div>
+
+          <div class="command-line">
+            <span class="dollar-sign">tenviki@web:</span
+            >/home/tenviki/projects/2022<span class="dollar-sign">$</span>
+            <span>./advent-of-code</span>
+          </div>
+          <br />
+
+          <div class="start-text">Select a day: <span id="t-name"></span></div>
+          <div class="grid-select">
+            <button class="day day-select" tabindex="0" x-attr-data="05" x-attr-name="Supply Stacks">05</button>
+            <button class="day day-select" tabindex="0" x-attr-data="06" x-attr-name="Tuning Trouble">06</button>
+            <button class="day day-select" tabindex="0" x-attr-data="07" x-attr-name="No Space Left On Device">07</button>
+            <button class="day day-select" tabindex="0" x-attr-data="08" x-attr-name="Treetop Tree House">08</button>
+          </div>
+
+          <div id="method-select" style="display: none;">
+          <br />
+          <div class="start-text">Open code or github:</div>
+
+            <div class="grid-select">
+              <button class="day option-select" tabindex="0" x-attr-data="https://vikithedev.eu/aoc/2022/{day}/">Open visualization</button>
+              <button class="day option-select" tabindex="0" x-attr-data="https://github.com/TenViki/advent-of-code/tree/main/2022/src/{day}">Open github</button>
+              <button class="day option-select" tabindex="0" x-attr-data="https://github.com/TenViki/advent-of-code/tree/main/2022/visualizations/{day}">Open github for visualization</button>
+            </div>
+          </div>
+
+          <pre id="loading" style="display: none;">Loading...</pre>
+          
+      </div>
     </div>
+
+    <script src="./dist/index.js"></script>
   </body>
 </html>
