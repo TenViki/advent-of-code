@@ -5,6 +5,11 @@
   src: url('./fonts/caskaydia.otf');
 }
 
+.select {
+  padding: 1rem;
+  font-size: 150%;
+}
+
 * {
   font-family: "Caskaydia", monospace;
   margin: 0;
@@ -79,6 +84,10 @@ button:hover {
 
 button:active {
   color: #777;
+}
+
+button:focus-visible {
+  color: #fff;
 }
 
 body, html {

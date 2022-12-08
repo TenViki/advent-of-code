@@ -1,0 +1,43 @@
+.col {
+  color: #777;
+  margin-right: .6rem;
+  transition: .05s;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.row {
+  display: flex;
+}
+
+textarea{
+  /* white-space: nowrap; */
+}
+
+.visible, .selected {
+  color: #f1c40f;
+}
+
+.viewing {
+  color: #fff;
+}
+
+.grid-wrapper {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  transition: .2s;
+  display: none;
+}
+
+#output {
+  margin-top: 1rem;
+}
+
+.output-text{
+  width: 100%;
+}

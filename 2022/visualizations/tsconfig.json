@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
     "lib": ["ES6", "DOM"],
+    "target": "ESNext"
   }
 }
