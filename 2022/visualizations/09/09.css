@@ -1,0 +1,74 @@
+.row {
+  display: flex;
+}
+
+.grid-wrapper {
+  position: relative;
+}
+
+.cell {
+  color: #777;
+  padding: 0 .3rem;
+}
+
+.rope {
+  color: #f1c40f;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transition: .2s;
+}
+
+.rope.hidden {
+  opacity: 0;
+}
+
+.visited-1 {
+  color: #e74c3c;
+}
+
+.visited-2 {
+  color: #3498db;
+}
+
+.visited-1.visited-2 {
+  color: #8e44ad;
+}
+
+.score {
+  color: #777;
+}
+
+.score span {
+  color: #f1c40f;
+}
+
+.output {
+  display: flex;
+  flex-direction: row;
+}
+
+.text{
+  margin-left: 1rem;
+}
+
+#instructions {
+  margin-top: 1rem;
+  color: #777;
+}
+
+.instruction {
+  transition: .2s;
+  height: 1.1rem;
+}
+
+.instruction.done {
+  opacity: 0;
+  height: 0;
+  color: #777;
+}
+
+.instruction.performing {
+  color: #fff;
+}

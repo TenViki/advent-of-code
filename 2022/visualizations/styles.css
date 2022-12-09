@@ -93,6 +93,11 @@ button:focus-visible {
   color: #fff;
 }
 
+button:disabled {
+  color: #777;
+  cursor: default;
+}
+
 body, html {
   height: 100%;
   display: flex;
