@@ -16,6 +16,15 @@
   min-width: 30rem;
 }
 
+.grid-select{
+  display: grid;
+  width: fit-content; 
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  margin-bottom: 1rem;
+  gap: 0 1rem
+}
+
 body {
   display: flex;
   align-items: center;
@@ -63,3 +72,4 @@ body {
 #loading {
   margin-top: 1rem;
 }
+
