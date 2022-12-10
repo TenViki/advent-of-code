@@ -7,6 +7,11 @@
 * {
   font-family: "Caskaydia", monospace;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: hidden;
 }
 
 h1 {
@@ -109,6 +114,8 @@ body, html {
   display: flex;
   flex-grow: 1;
   flex-grow: 1;
+  overflow-y: hidden;
+
 }
 
 .input {
@@ -128,6 +135,7 @@ input[type="checkbox"] {
   justify-content: center;
   flex-grow: 1;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .output.left {
@@ -136,4 +144,16 @@ input[type="checkbox"] {
 
 .output.top {
   justify-content: flex-start;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777;
 }

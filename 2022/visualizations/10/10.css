@@ -1,0 +1,72 @@
+.instruction {
+  color: #777;
+  height: 1.2rem;
+  transition: .2s;
+  overflow: hidden;
+}
+
+.text-act span{
+  color: #f1c40f;
+}
+
+.instruction.current {
+  color: #fff;
+}
+
+.instruction.done {
+  color: #fff;
+  opacity: 0;
+  height: 0;
+}
+
+.text-act{
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+}
+
+.output {
+  flex-direction: row;
+  overflow-y: hidden;
+}
+
+.grid-wrapper{
+  position: relative;
+}
+
+#sprite{
+  position: absolute;
+  border: 1px solid #fff;
+  width: fit-content;
+  height: 100%;
+  pointer-events: none;
+  transition: .2s;
+}
+
+#instructions {
+  transform: translateY(50%);
+}
+
+#crt {
+  margin-right: 1rem;
+  color: #777;
+}
+
+.pixel {
+  transition: .2s;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel.active {
+  background-color: #333;
+}
+
+.pixel.on {
+  background-color: #f1c40f;
+}
