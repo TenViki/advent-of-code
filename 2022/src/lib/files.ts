@@ -34,6 +34,16 @@ export class InputParser {
     return line.replace("\r", "");
   }
 
+  public nextUntilEmptyLine(): string[] | null {
+    const lines: string[] = [];
+    let line = this.next();
+    while (line !== null && line !== "") {
+      lines.push(line);
+      line = this.next();
+    }
+    return lines;
+  }
+
   public nextNumber(): number | null {
     const line = this.next();
     if (line === null) {
