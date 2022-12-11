@@ -107,6 +107,8 @@ const updateItems = (monkeys: Monkey[]) => {
       const itemSlot = document.createElement("div");
       itemSlot.classList.add("monkey-item-slot");
       itemSlot.id = "item-slot-" + monkeyItems[item].id;
+      itemSlot.style.width =
+        monkeyItems[item].value.toString().length * 10 + "px";
       itemSlots!.appendChild(itemSlot);
     }
   }
@@ -230,6 +232,11 @@ const run = async () => {
           });
 
         monkey.activity++;
+
+        // update item value
+        document.getElementById(
+          `item-${item.id}`
+        )!.innerHTML = `<div class="item-value">${newValue}</div>`;
 
         document.getElementById(
           `monkey-${monkey.id}-activity`
