@@ -148,6 +148,7 @@ input[type="checkbox"] {
 
 ::-webkit-scrollbar {
   width: 2px;
+  height: 2px;
 }
 
 ::-webkit-scrollbar-track {

@@ -1,0 +1,57 @@
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: .9rem;
+  height: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  transition: .3s;
+}
+
+.cell.start {
+  color: #fff;
+}
+
+.cell.end {
+  color: #fff;
+}
+
+.visited{
+  animation: visitedAnimation 5s forwards;
+}
+
+.line{
+  background-color: #f1c40f;
+  position: absolute;
+  height: 2px;
+  transform-origin: left;
+}
+
+.line-2 {
+  background-color: #e74c3c;
+
+}
+
+.grid-wrapper {
+  position: relative;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    color: #777;
+  }
+  5% {
+    color: #fff;
+  }
+  100% {
+    color: #777;
+  }
+}

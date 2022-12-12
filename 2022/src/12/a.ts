@@ -45,27 +45,6 @@ let final;
 
 const visited: Set<string> = new Set();
 
-const renderGrid = () => {
-  // print grid to console with visited positions being marked
-  let grid = "";
-  for (let y = 0; y < heightMap.length; y++) {
-    for (let x = 0; x < heightMap[0].length; x++) {
-      if (visited.has(`${x},${y}`)) {
-        grid += " X";
-      } else {
-        let toAdd = heightMap[y][x].toString();
-        if (toAdd.length === 1) {
-          toAdd = " " + toAdd;
-        }
-        grid += toAdd;
-      }
-    }
-    grid += "\n";
-  }
-
-  console.log(grid);
-};
-
 while (queue.length > 0) {
   const position = queue.shift()!;
   const key = `${position.x},${position.y}`;
