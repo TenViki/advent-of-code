@@ -1,6 +1,6 @@
 import { InputParser } from "../lib/files";
 
-const inputParser = new InputParser("in.txt");
+const inputParser = new InputParser("test.txt");
 
 type ArrayType = (ArrayType | number)[];
 
@@ -39,8 +39,6 @@ const ds1 = [[2]];
 const ds2 = [[6]];
 const packets = [ds1, ds2] as ArrayType[];
 
-compareObjects([1, 1, 3, 1, 1], [[8, 7, 6]]);
-
 while (inputParser.hasNext()) {
   const [arr1, arr2] = inputParser
     .nextUntilEmptyLine()!
@@ -50,5 +48,8 @@ while (inputParser.hasNext()) {
 }
 
 packets.sort((a, b) => -compareObjects(a, b));
+
+console.log(compareObjects([1, 1, 5, 1, 1], [[1], [2, 3, 4]]));
+console.log(packets);
 
 console.log((packets.indexOf(ds1) + 1) * (packets.indexOf(ds2) + 1));

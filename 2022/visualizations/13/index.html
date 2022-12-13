@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./13.css" />
+    <title>AOC 2022 / Day 13</title>
+
+    <script>
+      var exports = {};
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="input">
+        <textarea
+          name=""
+          id="input"
+          cols="30"
+          rows="10"
+          wrap="off"
+          placeholder="Enter your input"
+        ></textarea>
+        <div class="controls">
+          <button onclick="run()" type="button">[run]</button>
+          <input
+            type="range"
+            min="10"
+            max="500"
+            step="10"
+            value="200"
+            id="speed"
+            oninput="(function s () {
+              speed = document.getElementById('speed').value;
+            })()"
+          />
+        </div>
+      </div>
+
+      <div class="output left">
+        <div class="packets-wrapper" id="wrapper">
+          <div class="packets" id="packet-slots"></div>
+          <div id="packets"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/13.js"></script>
+  </body>
+</html>

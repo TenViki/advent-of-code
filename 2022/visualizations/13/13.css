@@ -1,0 +1,11 @@
+.packet {
+  display: flex;
+}
+
+.number {
+  color: #fff;
+}
+
+.symbol {
+  color: #777;
+}
