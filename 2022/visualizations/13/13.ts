@@ -43,6 +43,12 @@ const sortAsync = async <T>(
 
     if (requiresSample) {
       // Let the async function calculate the next value
+      console.log(
+        "Sample",
+        JSON.stringify(nextA.value),
+        JSON.stringify(nextB.value),
+        await cmp(nextA.value, nextB.value)
+      );
       results.push([nextA, nextB, await cmp(nextA.value, nextB.value)]);
     } else break; // It's fully sorted
   }
@@ -99,18 +105,19 @@ const run = async () => {
 
       if (currentChar !== undefined) {
         charDiv.classList.add("number");
-        charDiv.id = `packet-${index}-number-${numberCount}`;
+        charDiv.id = `packet-${index}-number-${symbolCount}-${numberCount}`;
 
         numberCount++;
       } else {
         currentChar = packet[i];
 
         if (currentChar === "[") {
-          charDiv.id = `packet-${index}-symbol-${symbolCount}`;
+          charDiv.classList.add(`packet-${index}-symbol-${symbolCount}`);
+          numberCount = 0;
           symbolCount++;
         } else if (currentChar === "]") {
           symbolCount--;
-          charDiv.id = `packet-${index}-symbol-${symbolCount}`;
+          charDiv.classList.add(`packet-${index}-symbol-${symbolCount}`);
         }
 
         charDiv.classList.add("symbol");
@@ -125,41 +132,121 @@ const run = async () => {
 
   type ArrayType = (ArrayType | number)[];
 
-  const compareObjects = async (
-    a: ArrayType,
-    b: ArrayType
-  ): Promise<number> => {
-    const minLen = Math.min(a.length, b.length);
-    for (let i = 0; i < minLen; i++) {
-      if (typeof a[i] == "number" && typeof b[i] == "number") {
-        if (a[i] < b[i]) return 1;
-        if (a[i] > b[i]) return 0;
-      }
-      let r;
-      if (typeof a[i] == "object" && typeof b[i] == "object") {
-        r = await compareObjects(a[i] as ArrayType, b[i] as ArrayType);
-      }
-
-      if (typeof a[i] == "number" && typeof b[i] == "object") {
-        r = await compareObjects([a[i]], b[i] as ArrayType);
-      }
-
-      if (typeof a[i] == "object" && typeof b[i] == "number") {
-        r = await compareObjects(a[i] as ArrayType, [b[i]]);
-      }
-
-      if (r == 1) return 1;
-      if (r == 0) return 0;
-    }
-
-    if (a.length < b.length) return 1;
-    else if (a.length > b.length) return 0;
-    else return 2;
-  };
-
   const parsedPackets = packets.map((packet) =>
     JSON.parse(packet)
   ) as ArrayType[];
+
+  const compareObjects = async (
+    a: ArrayType,
+    b: ArrayType,
+    nestage = 0,
+    indexA = 0,
+    indexB = 0,
+    numCount = 0
+  ): Promise<number> => {
+    const minLen = Math.min(a.length, b.length);
+
+    const ia = parsedPackets.findIndex((v) => v === a);
+    const ib = parsedPackets.findIndex((v) => v === b);
+
+    if (ia !== -1 && ib !== -1) {
+      indexA = ia;
+      indexB = ib;
+    }
+
+    // add active class to packet []s
+    const packetASymbols = document.querySelectorAll(
+      `.packet-${indexA}-symbol-${nestage}`
+    );
+    const packetBSymbols = document.querySelectorAll(
+      `.packet-${indexB}-symbol-${nestage}`
+    );
+
+    packetASymbols.forEach((el) => el.classList.add("active"));
+    packetBSymbols.forEach((el) => el.classList.add("active"));
+
+    for (let i = 0; i < minLen; i++) {
+      await wait(speed * 10);
+
+      numCount++;
+
+      if (typeof a[i] == "number" && typeof b[i] == "number") {
+        const numberElA = document.querySelector(
+          `#packet-${indexA}-number-${nestage + 1}-${numCount}`
+        ) as HTMLDivElement;
+
+        const numberElB = document.querySelector(
+          `#packet-${indexB}-number-${nestage + 1}-${numCount}`
+        ) as HTMLDivElement;
+
+        console.log(
+          `#packet-${indexA}-number-${nestage + 1}-${numCount}`,
+          `#packet-${indexB}-number-${nestage + 1}-${numCount}`
+        );
+
+        numberElA.classList.add("active");
+        numberElB.classList.add("active");
+
+        packetASymbols.forEach((el) => el.classList.remove("active"));
+        packetBSymbols.forEach((el) => el.classList.remove("active"));
+
+        await wait(speed * 10);
+
+        numberElA.classList.remove("active");
+        numberElB.classList.remove("active");
+
+        if (a[i] < b[i]) return 1;
+        if (a[i] > b[i]) return -1;
+      }
+      let r;
+      if (typeof a[i] == "object" && typeof b[i] == "object") {
+        packetASymbols.forEach((el) => el.classList.remove("active"));
+        packetBSymbols.forEach((el) => el.classList.remove("active"));
+        r = compareObjects(
+          a[i] as ArrayType,
+          b[i] as ArrayType,
+          nestage + 1,
+          indexA,
+          indexB
+        );
+      }
+
+      if (typeof a[i] == "number" && typeof b[i] == "object") {
+        packetASymbols.forEach((el) => el.classList.remove("active"));
+        packetBSymbols.forEach((el) => el.classList.remove("active"));
+        r = compareObjects(
+          [a[i]],
+          b[i] as ArrayType,
+          nestage + 1,
+          indexA,
+          indexB
+        );
+      }
+
+      if (typeof a[i] == "object" && typeof b[i] == "number") {
+        packetASymbols.forEach((el) => el.classList.remove("active"));
+        packetBSymbols.forEach((el) => el.classList.remove("active"));
+        r = compareObjects(
+          a[i] as ArrayType,
+          [b[i]],
+          nestage + 1,
+          indexA,
+          indexB
+        );
+      }
+
+      if (r == 1) return 1;
+      if (r == -1) return -1;
+    }
+
+    // remove active class from packet
+    packetASymbols.forEach((el) => el.classList.remove("active"));
+    packetBSymbols.forEach((el) => el.classList.remove("active"));
+
+    if (a.length < b.length) return 1;
+    else if (a.length > b.length) return -1;
+    else return 0;
+  };
 
   const sorted = await sortAsync(parsedPackets, compareObjects);
   console.log(sorted);

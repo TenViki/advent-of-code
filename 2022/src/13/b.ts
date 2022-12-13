@@ -49,7 +49,7 @@ while (inputParser.hasNext()) {
 
 packets.sort((a, b) => -compareObjects(a, b));
 
-console.log(compareObjects([1, 1, 5, 1, 1], [[1], [2, 3, 4]]));
+console.log(compareObjects([1, 1, 5, 1, 1], [1, 1, 3, 1, 1]));
 console.log(packets);
 
 console.log((packets.indexOf(ds1) + 1) * (packets.indexOf(ds2) + 1));

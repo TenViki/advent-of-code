@@ -6,6 +6,14 @@
   color: #fff;
 }
 
+.number.active {
+  color: #f1c40f;
+}
+
 .symbol {
   color: #777;
+}
+
+.symbol.active {
+  color: #f1c40f;
 }
