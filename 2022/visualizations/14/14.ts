@@ -27,7 +27,6 @@ const populateGrid = (
   for (let y = pos.minY; y <= pos.maxY; y++) {
     const row = document.createElement("div");
     row.classList.add("row");
-    console.log(pos.minX, pos.maxX);
     for (let x = pos.minX; x <= pos.maxX; x++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
@@ -45,7 +44,6 @@ const populateGrid = (
       row.appendChild(cell);
     }
 
-    console.log("row", row.childElementCount);
     grid.appendChild(row);
   }
 };
@@ -57,8 +55,6 @@ const run = async () => {
   let maxY = 0;
   let minX = Infinity;
   let maxX = -Infinity;
-
-  console.log("run!");
 
   const lines = (textarea!.value || defaultValue)
     .split("\n")
@@ -96,6 +92,16 @@ const run = async () => {
     { minY, maxY: maxY + 1, minX: minX - 1, maxX: maxX + 1 },
     rockPositions
   );
+
+  await wait(100);
+  const outputEl = document.querySelector(".output") as HTMLDivElement;
+  if (grid.offsetHeight > outputEl.offsetHeight) {
+    outputEl.classList.add("top");
+  }
+
+  if (grid.offsetWidth > outputEl.offsetWidth) {
+    outputEl.classList.add("left");
+  }
 
   const sandPositions = new Set<string>();
 
