@@ -1,0 +1,37 @@
+.grid-wrapper {
+  position: relative;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+}
+
+.sand {
+  color: #f1c40f;
+  position: absolute;
+  transition: .2s;
+
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sand.end {
+  opacity: 0;
+}
+
+span {
+  color: #f1c40f;
+}
