@@ -1,0 +1,50 @@
+.grid-wrapper {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+.cell {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .2rem;
+
+  margin-right: .5rem;
+  color: #777;
+}
+
+.sand {
+  color: #f1c40f;
+  position: absolute;
+  transition: .2s;
+
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sand.end {
+  opacity: 0;
+}
+
+span {
+  color: #f1c40f;
+}
+
+#bounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: .4rem;
+} 
