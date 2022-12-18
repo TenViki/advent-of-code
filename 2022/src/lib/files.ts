@@ -52,12 +52,12 @@ export class InputParser {
     return parseInt(line);
   }
 
-  public nextNumberArray(): number[] | null {
+  public nextNumberArray(spearator = " "): number[] | null {
     const line = this.next();
     if (line === null) {
       return null;
     }
-    return line.split(" ").map(Number);
+    return line.trim().split(spearator).map(Number);
   }
 
   public hasNext(): boolean {
