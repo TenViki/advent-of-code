@@ -1,0 +1,9 @@
+{
+  "name": "aoc-2023",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
