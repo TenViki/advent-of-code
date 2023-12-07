@@ -4,9 +4,30 @@ export class InputParser {
   private lines: string[];
   private linesRead: number = 0;
 
-  constructor(filename: string, private outputname?: string) {
+  constructor(
+    filename: string,
+    private outputname?: string
+  ) {
+    console.log(process.env);
+    if (process.env.USE_STDIN) {
+      console.log(`Loading stdin as input`);
+      const file = fs.readFileSync(0, "utf8");
+      console.log(`File loaded!`);
+      this.lines = file.split("\n").filter((line) => line);
+      return;
+    }
+
     console.log(`Loading file ${filename} as input`);
-    const file = fs.readFileSync(filename, "utf8");
+
+    let pathname = process.cwd();
+
+    try {
+      fs.accessSync(pathname + "/" + filename);
+    } catch (error) {
+      pathname = pathname.replace("dist", "src");
+    }
+
+    const file = fs.readFileSync(pathname + "/" + filename, "utf8");
     console.log(`File loaded!`);
     this.lines = file.split("\n").filter((line) => line);
 
