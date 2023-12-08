@@ -8,7 +8,6 @@ export class InputParser {
     filename: string,
     private outputname?: string
   ) {
-    console.log(process.env);
     if (process.env.USE_STDIN) {
       console.log(`Loading stdin as input`);
       const file = fs.readFileSync(0, "utf8");
