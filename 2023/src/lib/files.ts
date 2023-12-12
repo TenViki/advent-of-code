@@ -87,4 +87,14 @@ export class InputParser {
   public getFullInput(): string {
     return this.lines.join("\n");
   }
+
+  public loadAsGrid(): string[][] {
+    const grid: string[][] = [];
+
+    while (this.hasNext()) {
+      grid.push(this.next()!.split(""));
+    }
+
+    return grid;
+  }
 }
